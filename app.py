@@ -11,8 +11,9 @@ def rename_files():
     print(file_list)
     os.chdir(r"C:\Users\ferar\Desktop\PROJECTS\msg\prank")
     saved_path= os.getcwd()
-    
-    for file_nme in file_list:
-        os.rename(file_name, file_name.translate(None, "0123456789"))
-    
+    #print("Current Path" + saved_path)
+    for file_name in file_list:
+        trans = str.maketrans("","0123456789")
+        os.rename(file_name, file_name.translate(trans))
+    os.chdir(saved_path)
 rename_files()
